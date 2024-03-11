@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Miles Kodama</title>
+    <link>https://mkodama.org/</link>
+    <description>Recent content in Home on Miles Kodama</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mkodama.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let students use AI</title>
+      <link>https://mkodama.org/posts/dunbar/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/dunbar/</guid>
+      <description>I originally wrote this post for an essay contest at my school. It won the third place prize and was published in a campus magazine under a slightly different title. I&amp;rsquo;ll admit that my discussion is rather parochial in its focus on Williams, but my main claims easily generalize to other institutions. As always, I invite comments, objections, and feedback.&#xA;Williams is due for a deep rethink on the role of artificial intelligence (hereafter AI) in college classes.</description>
+    </item>
+    <item>
+      <title>Wear a nametag</title>
+      <link>https://mkodama.org/posts/nametag/</link>
+      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/nametag/</guid>
+      <description>I&amp;rsquo;ve been wearing a nametag out in public (as often as I can remember to put it on) for the last three months, and I think you should consider doing the same. ⊕ Your nametag doesn’t have to be fancy. As you can see, mine isn’t. Why? # Remind acquaintances of your name. I have upwards of a hundred acquaintances I can recognize on sight and whom I&amp;rsquo;ve spoken to at least once whose names I cannot recall.</description>
+    </item>
+    <item>
+      <title>Fooled by Randomness</title>
+      <link>https://mkodama.org/posts/taleb-randomness/</link>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/taleb-randomness/</guid>
+      <description>Main points # I take this book to be mainly about the expected value (EV) principle, which says that when you make a decision under risk, you should maximize your probability weighted average payoff. The concept of expected value makes only a brief appearance in one chapter, and you won&amp;rsquo;t find a mathematical formula for it anywhere in the book. But as Taleb says, “mathematics is a tool to meditate, not compute,” and most of what he writes in Fooled by Randomness is implicitly a meditation on EV.</description>
+    </item>
+  </channel>
+</rss>
