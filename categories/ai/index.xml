@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Miles Kodama</title>
+    <link>https://mkodama.org/categories/ai/</link>
+    <description>Recent content in AI on Miles Kodama</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mkodama.org/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let students use AI</title>
+      <link>https://mkodama.org/posts/dunbar/</link>
+      <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/dunbar/</guid>
+      <description>I originally wrote this post for an essay contest at my school. It won the third place prize and was published in a campus magazine under a slightly different title. I&amp;rsquo;ll admit that my discussion is rather parochial in its focus on Williams, but my main claims easily generalize to other institutions. As always, I invite comments, objections, and feedback.&#xA;Williams is due for a deep rethink on the role of artificial intelligence (hereafter AI) in college classes.</description>
+    </item>
+  </channel>
+</rss>
