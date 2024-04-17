@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numeracy on Miles Kodama</title>
+    <link>https://mkodama.org/categories/numeracy/</link>
+    <description>Recent content in Numeracy on Miles Kodama</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mkodama.org/categories/numeracy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Landmark Numbers</title>
+      <link>https://mkodama.org/posts/numbers/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/numbers/</guid>
+      <description>Motivation # You are awash in numbers. You read them in news articles, hear them in conversations, ponder over them in textbooks. The half-life of carbon 14 is 5700 years. The cruising speed of a Boeing 747 is 900 kilometers per hour. The diameter of a Covid-19 particle is 80 nanometers. Your response to this torrent of numbers could be to let it flow past without leaving much impression on your brain.</description>
+    </item>
+  </channel>
+</rss>

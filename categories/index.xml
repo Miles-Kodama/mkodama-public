@@ -6,8 +6,22 @@
     <description>Recent content in Categories on Miles Kodama</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mkodama.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advice</title>
+      <link>https://mkodama.org/categories/advice/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/categories/advice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Numeracy</title>
+      <link>https://mkodama.org/categories/numeracy/</link>
+      <pubDate>Wed, 17 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/categories/numeracy/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI</title>
       <link>https://mkodama.org/categories/ai/</link>
@@ -20,13 +34,6 @@
       <link>https://mkodama.org/categories/education/</link>
       <pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/categories/education/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Advice</title>
-      <link>https://mkodama.org/categories/advice/</link>
-      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://mkodama.org/categories/advice/</guid>
       <description></description>
     </item>
     <item>

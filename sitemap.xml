@@ -2,26 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkodama.org/categories/ai/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
+    <loc>https://mkodama.org/categories/advice/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkodama.org/categories/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkodama.org/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkodama.org/posts/numbers/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkodama.org/categories/numeracy/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkodama.org/posts/</loc>
+    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkodama.org/categories/ai/</loc>
     <lastmod>2024-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkodama.org/categories/education/</loc>
     <lastmod>2024-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mkodama.org/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://mkodama.org/posts/dunbar/</loc>
     <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/advice/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkodama.org/posts/nametag/</loc>
     <lastmod>2024-02-02T00:00:00+00:00</lastmod>
