@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Miles Kodama</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://mkodama.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic and Decision-Theoretical Dutch Books</title>
+      <link>https://mkodama.org/posts/dutchbooks/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/posts/dutchbooks/</guid>
+      <description>Introduction # Here&amp;rsquo;s a fun fact—some combinations of anthropic assumptions and decision theories expose you to Dutch books.(1) (1)My apologies to readers who aren&amp;rsquo;t familiar with the basics of the anthropics and decision theory debates; I won&amp;rsquo;t be explaining them here. For an introduction to causal and evidential decision theory, I recommend chapter nine of Martin Peterson&amp;rsquo;s textbook, and for a (dated) intro to anthropics, I recommend Nick Bostrom&amp;rsquo;s Anthropic Bias.</description>
+    </item>
     <item>
       <title>Defining Psychological Connectedness</title>
       <link>https://mkodama.org/posts/reductionist/</link>
