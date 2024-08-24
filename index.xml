@@ -51,6 +51,13 @@
       <description>Main points # I take this book to be mainly about the expected value (EV) principle, which says that when you make a decision under risk, you should maximize your probability weighted average payoff. The concept of expected value makes only a brief appearance in one chapter, and you won&amp;rsquo;t find a mathematical formula for it anywhere in the book. But as Taleb says, “mathematics is a tool to meditate, not compute,” and most of what he writes in Fooled by Randomness is implicitly a meditation on EV.</description>
     </item>
     <item>
+      <title>Dodgson Condensation</title>
+      <link>https://mkodama.org/notes/dodgson-con/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/dodgson-con/</guid>
+      <description>The Reverend Charles Dodgson (alias Lewis Carroll) invented a neat method of taking determinants without cofactor expansion or row reduction. I like to think of his condensation method as building an imaginary pyramid of matrices. The base of the pyramid is the matrix whose determinant you&amp;rsquo;re trying to find. In the air above each of the base matrix&amp;rsquo;s interior whitespaces, you imagine writing the determinant of the two-by-two submatrix centered on that whitespace.</description>
+    </item>
+    <item>
       <title>Moral Uncertainty</title>
       <link>https://mkodama.org/notes/moral-uncertainty/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
