@@ -65,14 +65,22 @@
 </span>
 </p>
 <p>The obvious catch is that this method doesn&rsquo;t work when one of the base&rsquo;s interior entries is zero, since another entry will eventually appear above it, and you&rsquo;ll get a division by zero error. The workaround is to move all interior zeroes to the edges of the matrix using elementery row operations before you start building the pyramid. This will always be possible unless the determinant of the base matrix is zero.</p>
-<p>Questions</p>
+<p>In case my description of the pyramid didn&rsquo;t do much for you, I also made a small interactive visualization showing how you would calculate <label for="marginnote-1" class="margin-toggle marginnote-ind">⊕</label>
+<input type="checkbox" id="marginnote-1" class="margin-toggle"/>
+<span class="marginnote">
+<iframe src="https://www.wolframcloud.com/obj/mmk4/Published/DodgsonConIllustration.nb?_embed=iframe" width="480" height="420" type="margin"></iframe> 
+</span>
+</p>
+<p><code>\[ \begin{vmatrix} 5 &amp; 0 &amp; 3  \\  0 &amp; 2 &amp; 1  \\  4 &amp; 3 &amp; 4  \\ \end{vmatrix}  = 1\]</code></p>
+<p>using Dodgson condensation.</p>
+<p><em>Questions</em></p>
 <ul>
 <li>Did Lewis Carroll sneak any references to the condensation method into his fiction?</li>
 <li>Why hasn&rsquo;t condensation replaced cofactor expansion in mathematical pedagogy?</li>
 <li>How do the proofs of basic theorems in linear algebra look if you take the condensation method as your definition of the determinant?</li>
 <li>What happens if you get an interior zero in one of the matrices above the base? Is there some guarantee that this can&rsquo;t happen, and if not, what&rsquo;s the workaround?</li>
 </ul>
-<p>Reading List</p>
+<p><em>Reading List</em></p>
 <ul>
 <li>Dodgson&rsquo;s <a href="https://www.gutenberg.org/files/37354/37354-pdf.pdf">original paper</a> describing his method of condensation.</li>
 <li><a href="https://core.ac.uk/download/pdf/82016131.pdf">Abeles</a> on the history of the method. The bibliography looks rich.</li>
@@ -156,6 +164,36 @@
 </article>
 
 
+
+
+
+
+
+  <script>(function(){var e,t,n,s=document.getElementsByTagName("code");for(n=0;n<s.length;){if(t=s[n],t.parentNode.tagName!=="PRE"&&t.childElementCount===0&&!t.classList.contains("nolatex")&&(e=t.textContent,/^\$[^$]/.test(e)&&/[^$]\$$/.test(e)&&(e=e.replace(/^\$/,"\\(").replace(/\$$/,"\\)"),t.textContent=e),/^\\\((.|\s)+\\\)$/.test(e)||/^\\\[(.|\s)+\\\]$/.test(e)||/^\$(.|\s)+\$$/.test(e)||/^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(e))){t.outerHTML=t.innerHTML;continue}n++}})()</script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+            
+            
+            
+            
+            trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+            macros: {
+              "\\eqref": "\\href{###1}{(\\text{#1})}",
+              "\\ref": "\\href{###1}{\\text{#1}}",
+              "\\label": "\\htmlId{#1}{}"
+            }
+        });
+    });
+</script>
 
 
 
