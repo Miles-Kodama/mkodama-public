@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description"
-    content="This note is a stub for now—more soon.
-Reading List
-Mahtani&rsquo;s overview of imprecise probabilities ✔ Bradley, DT with a Human Face deserves a closer reading than I gave it. Elga presents a Dutch book against agents with fuzzy credences. Last updated 29 August 2024 ">
+    content="Clearly real humans do not have sharp credences on most propositions of real interest outside of games and scientific experiments. Perfectly sharp credences are ruled out by both our computational and our evidential constraints. Even if I had access to enough evidence to pin down a unique sharp posterior on some realistic proposition, my brain runs to slowly to update on all this evidence in reasonable time, and it&rsquo;s too small to hold the resulting infinitely precise credences in memory. ">
 <link rel="canonical" href="https://mkodama.org/notes/fuzzy/" />
 
 
@@ -60,7 +58,20 @@ Mahtani&rsquo;s overview of imprecise probabilities ✔ Bradley, DT with a Human
 
   
 
-  <section><p><em>This note is a stub for now—more soon.</em></p>
+  <section><p>Clearly real humans do not have sharp credences on most propositions of real interest outside of games and scientific experiments. Perfectly sharp credences are ruled out by both our <em>computational</em> and our <em>evidential</em> constraints. Even if I had access to enough evidence to pin down a unique sharp posterior on some realistic proposition, my brain runs to slowly to update on all this evidence in reasonable time, and it&rsquo;s too small to hold the resulting infinitely precise credences in memory. On the other hand, even an ideal Bayesian with infinite memory wouldn&rsquo;t be able to justify a unique sharp posterior just on the basis of evidence I can access. I simply don&rsquo;t know enough about the world to say non-arbitrarily that my credence on rain tomorrow should be 0.567… instead of 0.568…</p>
+<p>Given that we all have these defects, we might wonder what mathematical formalism is appropriate for representing our fuzzy belief states. Sharp Bayesianism will judge all fuzzy believers like us irrational, but surely that&rsquo;s not the end of the story. There are better and worse ways of forming beliefs under scarcity of evidence and bounded compute. Maybe there are principles of fuzzy Bayesianism that guarantee our beliefs will be as good as they can be given our constraints.</p>
+<p>So the big questions are:</p>
+<ul>
+<li>How should you formally represent a fuzzy belief?</li>
+<li>How do you measure the accuracy of a fuzzy belief?<label for="sidenote-1" class="margin-toggle sidenote-number">(1)</label>
+<input type="checkbox" id="sidenote-1" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(1)</span>ie, are there <a href="https://en.wikipedia.org/wiki/Scoring_rule">scoring rules</a> with desirable properties that don&rsquo;t assume precision?
+</span>
+</li>
+<li>How should you update fuzzy beliefs when you receive new evidence?</li>
+<li>How do you act on a fuzzy belief?</li>
+</ul>
 <p><em>Reading List</em></p>
 <ul>
 <li>Mahtani&rsquo;s <a href="https://philarchive.org/archive/MAHIP">overview</a> of imprecise probabilities ✔</li>
