@@ -72,13 +72,55 @@
 <li>How should you update fuzzy beliefs when you receive new evidence?</li>
 <li>How do you act on a fuzzy belief?</li>
 </ul>
+<h3 id="representing-fuzzy-beliefs">
+Representing fuzzy beliefs
+<a href="#representing-fuzzy-beliefs" class="heading-anchor">#</a>
+</h3>
+<p>A sharp Bayesian has a single credence function that takes in any proposition and returns a probability. A fuzzy Bayesian, by contrast, has a <em>set</em> of credence functions called a representor. Each function in the representor has to be normalized, non-negative, and countably additive, but the functions aren&rsquo;t required to agree with each other.</p>
+<p>Why would you think this is a reasonable model of fuzzy belief given that no real person carries a list of explicit credence functions around in their head? The answer is that realistic fuzzy agents can be represented as though they had representors.</p>
+<p>Suppose we have an agent capable of saying, for some pairs of propositions, whether one proposition is at least as subjectively credible as the other. That is, they have a credibility relation <code>$\trianglelefteq$</code> on the set of all propositions, and that relation may or may not be complete or transitive. Suppose also that there&rsquo;s a partial order relation <code>$\trianglelefteq'$</code> on the set of all propositions such that</p>
+<ul>
+<li><code>$A \trianglelefteq B \implies A \trianglelefteq' B.$</code> (<code>$\trianglelefteq'$</code> always agrees with <code>$\trianglelefteq.$</code>)</li>
+<li>If <code>$A \trianglelefteq B$</code> and <code>$B \not\trianglelefteq A,$</code> then <code>$B \not\trianglelefteq' A.$</code> (<code>$\trianglelefteq'$</code> never makes two propositions equally credible if <code>$\trianglelefteq$</code> said only that one was at least as credible as the other.)</li>
+<li><code>$\trianglelefteq'$</code> is complete, transitive, and <a href="https://en.wikipedia.org/wiki/Continuous_poset">continuous</a>.</li>
+</ul>
+<p>Then it&rsquo;s possible to represent our agent as a fuzzy Bayesian who judges one proposition at least as credible as another if an only if all the functions in their representor agree the more credible proposition is more likely than the less credible one.<label for="sidenote-2" class="margin-toggle sidenote-number">(2)</label>
+<input type="checkbox" id="sidenote-2" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(2)</span>See Bradley <a href="https://personal.lse.ac.uk/bradleyr/pdf/Decision%20theory%20with%20a%20human%20face.pdf"><em>DT w/ HF</em></a> §11.5.2
+</span>
+ More formally, the conditions above imply that there exists a maximal set <code>$P$</code> of probability functions such that
+<code>\[A \trianglelefteq B \iff p(A) \le p(B)\;\forall p\in P.\]</code></p>
+<p>I think this theorem gives us a pretty good reason to trust the formalism of fuzzy Bayesianism. Even if your representor isn&rsquo;t part of your &ldquo;mental furniture,&ldquo;<label for="sidenote-3" class="margin-toggle sidenote-number">(3)</label>
+<input type="checkbox" id="sidenote-3" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(3)</span>Ahmed <a href="https://www.cambridge.org/core/books/evidence-decision-and-causality/evidence-decision-and-causality/D58D014B0AEE742946D0265914047645"><em>ED&amp;C</em></a> §1.4
+</span>
+ we can accurately model you <em>as if</em> your probabalistic judgements were arrived at by consulting a representor—at least unless you&rsquo;re severely inconsistent.</p>
+<h3 id="updating-fuzzy-beliefs">
+Updating fuzzy beliefs
+<a href="#updating-fuzzy-beliefs" class="heading-anchor">#</a>
+</h3>
+<p>The standard procedure for revising fuzzy beliefs when you gain new evidence is to update each of the credences in your representor by normal conditionalization. That is, if your representor at time <code>$t$</code> is <code>$P_t$</code>, and between <code>$t$</code> and <code>$t'$</code> you learn only that proposition <code>$E$</code> is true, then your representor at time <code>$t'$</code>should be
+<code>\[P_{t'} = \{p(\cdot |E)\,|\, p \in P_t\}\]</code></p>
+<p>There&rsquo;s some writing about <em>why</em> this updating procedure is rationally required, but I don&rsquo;t find it terribly interesting as I&rsquo;m not tempted to reject conditionalization in either the sharp or the fuzzy case.<label for="sidenote-4" class="margin-toggle sidenote-number">(4)</label>
+<input type="checkbox" id="sidenote-4" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(4)</span>This <a href="https://link.springer.com/article/10.1007/s11098-019-01377-y">article by Pettigrew</a> makes the case for sharp Bayesians to update by conditionalization. I also recommend his interview on the <a href="https://open.spotify.com/episode/0k6D9eKwpwAt93AtK1mqPC?si=42f7858f767c4075">Formal Philosophy Podcast</a>.
+</span>
+</p>
+<p><em>Questions</em></p>
+<ul>
+<li>Are there cases where it&rsquo;s intutitively appealing for a fuzzy Bayesian to not conditionalize on new evidence?</li>
+</ul>
 <p><em>Reading List</em></p>
 <ul>
 <li>Mahtani&rsquo;s <a href="https://philarchive.org/archive/MAHIP">overview</a> of imprecise probabilities ✔</li>
-<li>Bradley, <a href="https://personal.lse.ac.uk/bradleyr/pdf/Decision%20theory%20with%20a%20human%20face.pdf"><em>DT with a Human Face</em></a> chapter 11 deserves a closer reading than I gave it.</li>
+<li>Seamus Bradley&rsquo;s <a href="https://plato.stanford.edu/entries/imprecise-probabilities/"><em>SEP</em> article</a></li>
+<li>Richard Bradley, <a href="https://personal.lse.ac.uk/bradleyr/pdf/Decision%20theory%20with%20a%20human%20face.pdf"><em>DT with a Human Face</em></a> chapter 11. ✔</li>
 <li>Elga <a href="https://www.princeton.edu/~adame/papers/sharp/elga-subjective-probabilities-should-be-sharp.pdf">presents a Dutch book</a> against agents with fuzzy credences.</li>
 </ul>
-<p><em>Last updated 29 August 2024</em></p>
+<p><em>Last updated 3 September 2024</em></p>
 </section>
   <section><footer class="page-footer">
 <hr />
@@ -155,6 +197,36 @@
 </article>
 
 
+
+
+
+
+
+  <script>(function(){var e,t,n,s=document.getElementsByTagName("code");for(n=0;n<s.length;){if(t=s[n],t.parentNode.tagName!=="PRE"&&t.childElementCount===0&&!t.classList.contains("nolatex")&&(e=t.textContent,/^\$[^$]/.test(e)&&/[^$]\$$/.test(e)&&(e=e.replace(/^\$/,"\\(").replace(/\$$/,"\\)"),t.textContent=e),/^\\\((.|\s)+\\\)$/.test(e)||/^\\\[(.|\s)+\\\]$/.test(e)||/^\$(.|\s)+\$$/.test(e)||/^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(e))){t.outerHTML=t.innerHTML;continue}n++}})()</script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+            
+            
+            
+            
+            trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+            macros: {
+              "\\eqref": "\\href{###1}{(\\text{#1})}",
+              "\\ref": "\\href{###1}{\\text{#1}}",
+              "\\label": "\\htmlId{#1}{}"
+            }
+        });
+    });
+</script>
 
 
 
