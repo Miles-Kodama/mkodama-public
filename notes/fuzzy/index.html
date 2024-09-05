@@ -97,30 +97,52 @@ Representing fuzzy beliefs
 <span class="sidenote-number">(3)</span>Ahmed <a href="https://www.cambridge.org/core/books/evidence-decision-and-causality/evidence-decision-and-causality/D58D014B0AEE742946D0265914047645"><em>ED&amp;C</em></a> §1.4
 </span>
  we can accurately model you <em>as if</em> your probabalistic judgements were arrived at by consulting a representor—at least unless you&rsquo;re severely inconsistent.</p>
+<h3 id="scoring-fuzzy-beliefs">
+Scoring fuzzy beliefs
+<a href="#scoring-fuzzy-beliefs" class="heading-anchor">#</a>
+</h3>
+<p>Given a sharp credence on some proposition and knowledge of whether the proposition is actually true, we can define functions called scoring rules that will tell us how accurate the credence was. Some of these scoring rules have the nice property that if the true chance of the proposition being true is <code>$p$</code>, the credence that will receive the highest expected accuracy score is also <code>$p.$</code> Such scoring rules are called strictly proper. Another way of thinking about strict propriety is that if you ask an EV maximizer to give their credence on a proposition and offer them a reward proportional to their accuracy under a strictly proper scoring rule, they will always report their true credence.<label for="sidenote-4" class="margin-toggle sidenote-number">(4)</label>
+<input type="checkbox" id="sidenote-4" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(4)</span>For a more technically cautious definition, see <a href="https://sites.stat.washington.edu/raftery/Research/PDF/Gneiting2007jasa.pdf">this paper</a> §2.1
+</span>
+</p>
+<p>Aren&rsquo;t all plausible scoring rules strictly proper? No, here&rsquo;s a scoring rule that looks intuitively reasonable to me:
+<code>\[S(p) = 1 - |\bold{1}_A- p| \]</code>
+where <code>$S$</code> is your accuracy, <code>$A$</code> is some proposition, and <code>$p$</code> is your credence in <code>$A.$</code> This scoring rule rewards you linearly for getting closer to the truth, with a maximum possible score of 1 and a minimum score of 0. The trouble with this scoring rule is that it doesn&rsquo;t punish forecasters harshly enough for giving extreme credences in the wrong direction. If the true chance that <code>$A$</code> is <code>$x,$</code> the linear scoring rule says that the best credence to have is
+<code>\[\argmax_{p\in[0,1]} \big( xp + (1-x)(1-p)\big) = \begin{cases} 1 &amp; \text{if } x&gt;1/2 \\ 0 &amp; \text{if } x&lt;1/2 \\ [0,1] &amp; \text{if } x=1/2 \end{cases}\]</code>
+So in fact, the linear scoring rule is so improper that it only recommends a forecaster report their true credence when that credence happens to fall in a set of measure zero. But if you instead adopt the quadratic scoring rule
+<code>\[S(p) = 1 - (\bold{1}_A- p)^2, \]</code>
+you have a strictly proper accuracy metric called the <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score</a>.</p>
+<p>Are there strictly proper accuracy scores for fuzzy forecasts? <a href="https://www.cmu.edu/dietrich/philosophy/docs/seidenfeld/Forecasting%20with%20Imprecise%20Probabilities.pdf">This paper</a> proves that you can&rsquo;t define a strictly proper scoring rule that takes only the upper and lower envelope of a representor and returns a real valued accuracy score (pg 9). In other words, if a fuzzy forecaster reports to you only the highest and lowest credences they entertain on a proposition, and you have to reward them with a single dollar value, there&rsquo;s no way you can incentivize them to tell you their true beliefs.</p>
 <h3 id="updating-fuzzy-beliefs">
 Updating fuzzy beliefs
 <a href="#updating-fuzzy-beliefs" class="heading-anchor">#</a>
 </h3>
 <p>The standard procedure for revising fuzzy beliefs when you gain new evidence is to update each of the credences in your representor by normal conditionalization. That is, if your representor at time <code>$t$</code> is <code>$P_t$</code>, and between <code>$t$</code> and <code>$t'$</code> you learn only that proposition <code>$E$</code> is true, then your representor at time <code>$t'$</code>should be
 <code>\[P_{t'} = \{p(\cdot |E)\,|\, p \in P_t\}\]</code></p>
-<p>There&rsquo;s some writing about <em>why</em> this updating procedure is rationally required, but I don&rsquo;t find it terribly interesting as I&rsquo;m not tempted to reject conditionalization in either the sharp or the fuzzy case.<label for="sidenote-4" class="margin-toggle sidenote-number">(4)</label>
-<input type="checkbox" id="sidenote-4" class="margin-toggle"/>
+<p>There&rsquo;s some writing about <em>why</em> this updating procedure is rationally required, but I don&rsquo;t find it terribly interesting as I&rsquo;m not tempted to reject conditionalization in either the sharp or the fuzzy case.<label for="sidenote-5" class="margin-toggle sidenote-number">(5)</label>
+<input type="checkbox" id="sidenote-5" class="margin-toggle"/>
 <span class="sidenote">
-<span class="sidenote-number">(4)</span>This <a href="https://link.springer.com/article/10.1007/s11098-019-01377-y">article by Pettigrew</a> makes the case for sharp Bayesians to update by conditionalization. I also recommend his interview on the <a href="https://open.spotify.com/episode/0k6D9eKwpwAt93AtK1mqPC?si=42f7858f767c4075">Formal Philosophy Podcast</a>.
+<span class="sidenote-number">(5)</span>This <a href="https://link.springer.com/article/10.1007/s11098-019-01377-y">article by Pettigrew</a> makes the case for sharp Bayesians to update by conditionalization. I also recommend his interview on the <a href="https://open.spotify.com/episode/0k6D9eKwpwAt93AtK1mqPC?si=42f7858f767c4075">Formal Philosophy Podcast</a>.
 </span>
 </p>
 <p><em>Questions</em></p>
 <ul>
 <li>Are there cases where it&rsquo;s intutitively appealing for a fuzzy Bayesian to not conditionalize on new evidence?</li>
+<li>Is it possible to run fair empirical tests of fuzzy Bayesians&rsquo; performance relative relative to sharp Bayesians?</li>
+<li>Do working statisticians sometimes use fuzzy probabilities in their models? If so, how do they do it, and why?</li>
 </ul>
 <p><em>Reading List</em></p>
 <ul>
 <li>Mahtani&rsquo;s <a href="https://philarchive.org/archive/MAHIP">overview</a> of imprecise probabilities ✔</li>
-<li>Seamus Bradley&rsquo;s <a href="https://plato.stanford.edu/entries/imprecise-probabilities/"><em>SEP</em> article</a></li>
+<li>Seamus Bradley&rsquo;s <a href="https://plato.stanford.edu/entries/imprecise-probabilities/"><em>SEP</em> article</a> ✔</li>
 <li>Richard Bradley, <a href="https://personal.lse.ac.uk/bradleyr/pdf/Decision%20theory%20with%20a%20human%20face.pdf"><em>DT with a Human Face</em></a> chapter 11. ✔</li>
+<li>Schoenfield on &ldquo;<a href="https://philpapers.org/archive/SCHTAA-45.pdf">The accuracy and rationality of imprecise credence</a>&rdquo;</li>
+<li>Augustin&rsquo;s chapter on &ldquo;<a href="https://library.oapen.org/bitstream/handle/20.500.12657/51957/1/978-3-030-83640-5.pdf#page=71">Statistics with Imprecise Probabilities</a>&rdquo;</li>
 <li>Elga <a href="https://www.princeton.edu/~adame/papers/sharp/elga-subjective-probabilities-should-be-sharp.pdf">presents a Dutch book</a> against agents with fuzzy credences.</li>
 </ul>
-<p><em>Last updated 3 September 2024</em></p>
+<p><em>Last updated 5 September 2024</em></p>
 </section>
   <section><footer class="page-footer">
 <hr />
