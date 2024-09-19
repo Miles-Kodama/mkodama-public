@@ -55,7 +55,7 @@
       <link>https://mkodama.org/notes/dirac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/dirac/</guid>
-      <description>This note is a stub for now—more soon!&#xA;Questions&#xA;What are the advantages of Dirac notation over the mathematicians&amp;rsquo; notation for inner product spaces? Reading List&#xA;Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Last updated 5 September 2024</description>
+      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over the mathematicians&amp;rsquo; notation for inner product spaces? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Last updated 5 September 2024</description>
     </item>
     <item>
       <title>Dodgson Condensation</title>
@@ -77,6 +77,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/moral-uncertainty/</guid>
       <description>Maximizing Expected Choiceworthiness seems reasonable on its face, but I have three worries.&#xA;(1) I&amp;rsquo;m not sure that the best reasons we have to maximize expected value in cases of empirical uncertainty generalize to the case of moral uncertainty. For example, Law of Large Numbers arguments don&amp;rsquo;t apply if the event that you&amp;rsquo;re uncertain about is by its nature unrepeatable.&#xA;(2) It&amp;rsquo;s a very strict constraint on a moral theory to say it must rate all possible actions one might take with a single real number.</description>
+    </item>
+    <item>
+      <title>Suffering-Focused Ethics</title>
+      <link>https://mkodama.org/notes/sfe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/sfe/</guid>
+      <description>There&amp;rsquo;s a cluster of ethical views that say the prevention of extreme suffering takes priority over all other goals. On some views, preference satisfaction, pleasure creation, and the like are still considered good, but suffering reduction takes lexical priority over them, or is at least so much more desirable that it crowds out these other goals in practice. Other suffering-focused views go further and deny that pleasure and preference satisfaction are good at all.</description>
     </item>
     <item>
       <title>The Yankees Decision Problem</title>

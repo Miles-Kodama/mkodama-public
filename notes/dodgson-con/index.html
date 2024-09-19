@@ -73,14 +73,28 @@
 </p>
 <p><code>\[ \begin{vmatrix} 5 &amp; 0 &amp; 3  \\  0 &amp; 2 &amp; 1  \\  4 &amp; 3 &amp; 4  \\ \end{vmatrix}  = 1\]</code></p>
 <p>using Dodgson condensation.</p>
-<p><em>Questions</em></p>
+<h3 id="linear-algebra-with-dodgson-condensation">
+Linear algebra with Dodgson condensation
+<a href="#linear-algebra-with-dodgson-condensation" class="heading-anchor">#</a>
+</h3>
+<p>One advantage of condensation over cofactor expansion as a definition of the determinant is that it&rsquo;s clearly well-defined. Cofactor expansion requires you to arbitrarily choose a row or column to expand along, and it takes some effort to show that this choice doesn&rsquo;t make a difference to your final answer. On the other hand, the condensation algorithm is fully deterministic, at least for matrices without interior zeroes.</p>
+<p>[What happens to the determinant of a matrix when you rotate it? Rotating a 2x2 matrix by ninety degrees multiplies the determinant by -1. So if you have a 3x3 matrix and you rotate it by 90 degrees, the determinant doesn&rsquo;t change. How about a 4x4? The first level of the pyramid has its det multipled by -1, but then you undo that when you create the second (2x2) level. Dividing then introduces another factor of -1, and at the next step, you pick up another factor of -1</p>
+<p>General case nxn. If it weren&rsquo;t for the division steps, you would pick up n-1 minus signs. The divisions cause us to pick up an additional n-2 minus signs. That&rsquo;s n-3 minus signs, so the parity of an even dimension matrix flips, and the parity of an odd dimension matrix stay the same.</p>
+<p>When I test this in Mathematica, it turns out that rotation doesn&rsquo;t change the determinants at all… The exception is for 2x2 matrices, where the determinant does flip sign. And 3x3 matrices]</p>
+<h3 id="questions">
+Questions
+<a href="#questions" class="heading-anchor">#</a>
+</h3>
 <ul>
 <li>Did Lewis Carroll sneak any references to the condensation method into his fiction?</li>
 <li>Why hasn&rsquo;t condensation replaced cofactor expansion in mathematical pedagogy?</li>
 <li>How do the proofs of basic theorems in linear algebra look if you take the condensation method as your definition of the determinant?</li>
 <li>What happens if you get an interior zero in one of the matrices above the base? Is there some guarantee that this can&rsquo;t happen, and if not, what&rsquo;s the workaround?</li>
 </ul>
-<p><em>Reading List</em></p>
+<h3 id="reading-list">
+Reading List
+<a href="#reading-list" class="heading-anchor">#</a>
+</h3>
 <ul>
 <li>Dodgson&rsquo;s <a href="https://www.gutenberg.org/files/37354/37354-pdf.pdf">original paper</a> describing his method of condensation.</li>
 <li><a href="https://core.ac.uk/download/pdf/82016131.pdf">Abeles</a> on the history of the method. The bibliography looks rich.</li>
