@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<title>Measure Theory - Miles Kodama</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description"
+    content="A motivating example # Consider the function $f:[0,1]\to \mathbb{R}$ that takes all the irrational numbers to one and all the rational numbers to zero, ie
+\[f(x) = \begin{cases}0 &amp; x\in \mathbb{Q} \\ 1 &amp; \text{otherwise}\end{cases}\]
+If you try to graph this function in the plane, it looks like an equals sign. There&rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1). ">
+<link rel="canonical" href="https://mkodama.org/notes/measures/" />
+
+
+<link rel="icon" href="https://mkodama.org/favicon.ico" />
+
+
+<link rel="apple-touch-icon" href="https://mkodama.org/touch-icon.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" />
+</noscript>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte.min.css">
+
+
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte-options.min.css">
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte-override.css">
+
+</head>
+<body>
+
+
+<article id="main">
+  <section>
+<h1 class="content-title">Measure Theory</h1></section>
+
+  
+
+  <section><h3 id="a-motivating-example">
+A motivating example
+<a href="#a-motivating-example" class="heading-anchor">#</a>
+</h3>
+<p>Consider the function <code>$f:[0,1]\to \mathbb{R}$</code> that takes all the irrational numbers to one and all the rational numbers to zero, ie</p>
+<p><code>\[f(x) = \begin{cases}0 &amp; x\in \mathbb{Q} \\ 1 &amp; \text{otherwise}\end{cases}\]</code></p>
+<p>If you try to graph this function in the plane, it looks like an equals sign. There&rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1). Nevertheless, we know that these two lines aren&rsquo;t really equally &ldquo;solid&rdquo; or equally &ldquo;dense.&rdquo; There&rsquo;s a break in the upper line at every rational <code>$x$</code> and a break in the lower line at every irrational <code>$x,$</code> which means that the lower line is broken almost everywhere in [0,1]. It contains only countably many points whereas the upper line contains uncountably many. So intuitively, it&rsquo;s clear that the area under the graph of <code>$f$</code> <em>should</em> be one.</p>
+<p>Since we like to think of the integral of a function as the area under its graph, we might therefore hope that
+<code>\[\int_0^1 f(x)\, dx =^? 1,\]</code>
+but it turns out that the Riemann integral doesn&rsquo;t vindicate our hope. Why not? It&rsquo;s because the Riemann integral of <code>$f$</code> doesn&rsquo;t even exist.<label for="sidenote-1" class="margin-toggle sidenote-number">(1)</label>
+<input type="checkbox" id="sidenote-1" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(1)</span>I&rsquo;m going to use the notation from chapter 13 of Michael Spivak&rsquo;s <em>Calculus</em>, which was my first introduction to integration.
+</span>
+ Given <em>any</em> partition <code>$P$</code> of [0,1], density of both the rationals and the irrationals guarantees that <code>$f$</code> takes on the values 0 and 1 in every one of the subintervals defined by <code>$P.$</code> Hence
+<code>\[L(f,P) = 0\; \text{and}\; U(f,P) = 1,\]</code>
+and there&rsquo;s no way for the infimum of the upper sums to equal the supremum of the lower sums. As far as the Riemannian theory is concerned, <code>$f$</code> simply isn&rsquo;t integrable.</p>
+<p>This is an obvious glitch in the theory of integration, and one of the main goals of measure theory is to repair it. Lebesgue integration&rsquo;s first big insight is that slicing the equals sign into vertical cross sections is the wrong way to go about calculating its area. The vertical cross sections are just squashed versions of the full graph, so if we don&rsquo;t know how to assign an area to <code>$f$</code> over the whole interval, we won&rsquo;t know how to give an area to its restrictions down to subintervals either. Instead, we need to take <em>horizontal</em> cross sections. We take each value in the rage of <code>$f,$</code> multiply by the &ldquo;length&rdquo; of its preimage, and add them all up to get the Lebesgue integral of <code>$f,$</code> denoted<label for="sidenote-2" class="margin-toggle sidenote-number">(2)</label>
+<input type="checkbox" id="sidenote-2" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(2)</span>Schilling&rsquo;s notation
+</span>
+
+<code>\[\int_{[0,1]}f\,d\lambda  = 1\lambda\big([0,1]\setminus \mathbb{Q}\big) + 0 \lambda \big([0,1]\cap \mathbb{Q}\big).\]</code>
+All that&rsquo;s left now is to define a function <code>$\lambda$</code> called a measure that takes a subset of <code>$\mathbb{R}$</code> and tells us what its length should be. This turns out to be surprisingly involved, since we can&rsquo;t explicitly define <code>$\lambda$</code> on <code>$\mathcal{P}(\mathbb{R}).$</code> Rather, we define it on a small family of subsets of the reals, and then show that our definition extends uniquely to a measure on a larger family of subsets.<label for="sidenote-3" class="margin-toggle sidenote-number">(3)</label>
+<input type="checkbox" id="sidenote-3" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(3)</span>The hardest part of this procedure is the <a href="https://en.wikipedia.org/wiki/Carath%C3%A9odory%27s_extension_theorem">Carathéodory Extension Theorem</a>. See Schilling ch 6.
+</span>
+ Still though, this is the big idea: define a generalized notion of length in order to make the integral agree better with our intuitions about area.</p>
+<h3 id="questions">
+Questions
+<a href="#questions" class="heading-anchor">#</a>
+</h3>
+<ul>
+<li>What exactly is measure theory good for? I recently asked one of my physics professors whether I should learn measure theory, and his view was that it&rsquo;s nice to have but seldom useful. Most integrals physicists encounter in practice are either classically integrable or else completely intractable, so Lebesgue integration doesn&rsquo;t unlock much.</li>
+</ul>
+<h3 id="reading-list">
+Reading List
+<a href="#reading-list" class="heading-anchor">#</a>
+</h3>
+<ul>
+<li>Schilling, <a href="https://www.cambridge.org/9781316620243"><em>Measures, Integrals, and Martingales</em></a> is excellent so far, but light on motivation.</li>
+<li>Pollard, <a href="https://www.cambridge.org/core/books/users-guide-to-measure-theoretic-probability/A257FE6572A9142FE3B811FFF3FD0171"><em>A User&rsquo;s Guide to Measure Theoretic Probability</em></a></li>
+<li>Kapinski and Kopp, <a href="https://link.springer.com/book/10.1007/978-1-4471-0645-6"><em>Measure, Integral, and Probability</em></a></li>
+</ul>
+<p><em>Last updated 21 September 2024</em></p>
+</section>
+  <section><footer class="page-footer">
+<hr />
+
+<div class="previous-post" style="display:inline-block;">
+  
+  <a class="link-reverse" href="https://mkodama.org/notes/moral-uncertainty/?ref=footer">« Moral Uncertainty</a>
+  
+</div>
+
+<div class="next-post", style="display:inline-block;float:right;">
+  
+  <a class="link-reverse" href="https://mkodama.org/notes/fuzzy/?ref=footer">Fuzzy Bayesianism »</a>
+  
+</div>
+
+<ul class="page-footer-menu">
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    <li><a href="https://mailchi.mp/9d6b52ea249e/mkodama-newsletter"> Subscribe</a></li>
+  
+    <li><a href="mailto:miles@mkodama.org"> Email</a></li>
+  
+</ul>
+
+
+
+
+
+</footer>
+</section>
+  <section><nav class="menu">
+    <ul>
+    
+        <li><a href="https://mkodama.org/">Home</a></li>
+    
+        <li><a href="https://mkodama.org/posts/">Posts</a></li>
+    
+        <li><a href="https://mkodama.org/notes/">Notes</a></li>
+    
+        <li><a href="https://mkodama.org/categories/">Categories</a></li>
+    
+        <li><a href="https://mkodama.org/about/">About</a></li>
+    
+    </ul>
+</nav>
+</section>
+</article>
+
+
+
+
+
+
+
+  <script>(function(){var e,t,n,s=document.getElementsByTagName("code");for(n=0;n<s.length;){if(t=s[n],t.parentNode.tagName!=="PRE"&&t.childElementCount===0&&!t.classList.contains("nolatex")&&(e=t.textContent,/^\$[^$]/.test(e)&&/[^$]\$$/.test(e)&&(e=e.replace(/^\$/,"\\(").replace(/\$$/,"\\)"),t.textContent=e),/^\\\((.|\s)+\\\)$/.test(e)||/^\\\[(.|\s)+\\\]$/.test(e)||/^\$(.|\s)+\$$/.test(e)||/^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(e))){t.outerHTML=t.innerHTML;continue}n++}})()</script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+            
+            
+            
+            
+            trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+            macros: {
+              "\\eqref": "\\href{###1}{(\\text{#1})}",
+              "\\ref": "\\href{###1}{\\text{#1}}",
+              "\\label": "\\htmlId{#1}{}"
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+
+</html>

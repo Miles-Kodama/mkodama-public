@@ -55,7 +55,7 @@
       <link>https://mkodama.org/notes/dirac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/dirac/</guid>
-      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over the mathematicians&amp;rsquo; notation for inner product spaces? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Last updated 5 September 2024</description>
+      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over the mathematicians&amp;rsquo; notation for inner product spaces? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Hall, QT for Mathematicians §3.12 Last updated 5 September 2024</description>
     </item>
     <item>
       <title>Dodgson Condensation</title>
@@ -70,6 +70,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/fuzzy/</guid>
       <description>Clearly real humans do not have sharp credences on most propositions of real interest outside of games and scientific experiments. Perfectly sharp credences are ruled out by both our computational and our evidential constraints. Even if I could access enough evidence to pin down a unique sharp posterior on some realistic proposition, my brain runs too slowly to update on all this evidence in reasonable time, and it&amp;rsquo;s too small to hold the resulting infinitely precise credences in memory.</description>
+    </item>
+    <item>
+      <title>Measure Theory</title>
+      <link>https://mkodama.org/notes/measures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/measures/</guid>
+      <description>A motivating example # Consider the function $f:[0,1]\to \mathbb{R}$ that takes all the irrational numbers to one and all the rational numbers to zero, ie&#xA;\[f(x) = \begin{cases}0 &amp;amp; x\in \mathbb{Q} \\ 1 &amp;amp; \text{otherwise}\end{cases}\]&#xA;If you try to graph this function in the plane, it looks like an equals sign. There&amp;rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1).</description>
     </item>
     <item>
       <title>Moral Uncertainty</title>
