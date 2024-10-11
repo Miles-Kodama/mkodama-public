@@ -8,6 +8,13 @@
     <language>en-US</language>
     <atom:link href="https://mkodama.org/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Classical Mechanics</title>
+      <link>https://mkodama.org/notes/class-mech/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/class-mech/</guid>
+      <description>Motivation # So you&amp;rsquo;ve taken a first year college course on mechanics. You know Newton&amp;rsquo;s three laws by heart, and you can draw free body diagrams in your sleep. You might think that you know all there is to know about the behavior of large, dry, slow-moving objects, and in a certain sense, you do. Given the force laws and the initial conditions, you can in principle always crank out the state of the system numerically.</description>
+    </item>
+    <item>
       <title>Dirac Notation</title>
       <link>https://mkodama.org/notes/dirac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,6 +41,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/measures/</guid>
       <description>A motivating example # Consider the function $f:[0,1]\to \mathbb{R}$ that takes all the irrational numbers to one and all the rational numbers to zero, ie&#xA;\[f(x) = \begin{cases}0 &amp;amp; x\in \mathbb{Q} \\ 1 &amp;amp; \text{otherwise}\end{cases}\]&#xA;If you try to graph this function in the plane, it looks like an equals sign. There&amp;rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1).</description>
+    </item>
+    <item>
+      <title>Modal Realism</title>
+      <link>https://mkodama.org/notes/modal-realism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/modal-realism/</guid>
+      <description>Some apparently sane philosophers believe that all possible worlds exist. In other words, they deny that real implies actual. Why would anyone believe this view, which is called modal realism?&#xA;(1) The most natural way of interpreting statements about chance is possibilist. Every claim about a chance is actually a claim about the distribution of possible worlds where some proposition is true. So when I say&#xA;The chance of event $E$ is $p$,</description>
     </item>
     <item>
       <title>Moral Uncertainty</title>
