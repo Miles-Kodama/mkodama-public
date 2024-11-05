@@ -62,14 +62,14 @@
       <link>https://mkodama.org/notes/class-mech/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/class-mech/</guid>
-      <description>Motivation # So you&amp;rsquo;ve taken a first year college course on mechanics. You know Newton&amp;rsquo;s three laws by heart, and you can draw free body diagrams in your sleep. You might think that you know all there is to know about the behavior of large, dry, slow-moving objects, and in a certain sense, you do. Given the force laws and the initial conditions, you can in principle always crank out the state of the system numerically.</description>
+      <description>The big idea # Encode physics problems as optimization problems on functions.&#xA;Newtonian mechanics is about turning physics problems into initial value problems. Given the force laws and the initial configuration of a system, you just crank out the evolution of the system. This is a fully general procedure. Any classical mechanics problem that you can solve with Lagrangians and Hamiltonians you can also solve with forces.&#xA;Why is it sometimes better to optimize a function rather than solving an IVP?</description>
     </item>
     <item>
       <title>Dirac Notation</title>
       <link>https://mkodama.org/notes/dirac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/dirac/</guid>
-      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over the mathematicians&amp;rsquo; notation for inner product spaces? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Hall, QT for Mathematicians §3.12 Last updated 5 September 2024</description>
+      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over plain old function notation? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Andrew Steane&amp;rsquo;s crisp introduction to Dirac notation Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Hall, QT for Mathematicians §3.</description>
     </item>
     <item>
       <title>Dodgson Condensation</title>

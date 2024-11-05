@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description"
-    content="Motivation # So you&rsquo;ve taken a first year college course on mechanics. You know Newton&rsquo;s three laws by heart, and you can draw free body diagrams in your sleep. You might think that you know all there is to know about the behavior of large, dry, slow-moving objects, and in a certain sense, you do. Given the force laws and the initial conditions, you can in principle always crank out the state of the system numerically. ">
+    content="The big idea # Encode physics problems as optimization problems on functions.
+Newtonian mechanics is about turning physics problems into initial value problems. Given the force laws and the initial configuration of a system, you just crank out the evolution of the system. This is a fully general procedure. Any classical mechanics problem that you can solve with Lagrangians and Hamiltonians you can also solve with forces.
+Why is it sometimes better to optimize a function rather than solving an IVP? ">
 <link rel="canonical" href="https://mkodama.org/notes/class-mech/" />
 
 
@@ -58,19 +60,19 @@
 
   
 
-  <section><h3 id="motivation">
-Motivation
-<a href="#motivation" class="heading-anchor">#</a>
-</h3>
-<p>So you&rsquo;ve taken a first year college course on mechanics. You know Newton&rsquo;s three laws by heart, and you can draw free body diagrams in your sleep. You might think that you know all there is to know about the behavior of large, dry, slow-moving objects, and in a certain sense, you do. Given the force laws and the initial conditions, you can in principle always crank out the state of the system numerically. Sometimes when you&rsquo;re lucky, you&rsquo;ll even be able to find an exact solution.</p>
-<p>The problem is that force methods are sometimes intractable when a pen and paper solution <em>is</em> possible. For instance, suppose I give you the initial position and velocity of a chain constrained by one or more frictionless surfaces moving only under the influence of gravity and ask you to solve for its future motion. Doing this with forces will be a <em>disaster</em>. For every infinitesimal chain link, you&rsquo;ll have to draw a free body diagram and set up a vector equation with special cases for parts of the chain that are and are not in contact with surfaces. Then you apply continuity conditions (encoding the fact that the chain can&rsquo;t break) and set up a huge second order differential equation. You probably won&rsquo;t be able to solve it, and even if you do, your solution won&rsquo;t be robust to changes in the constraints.<label for="sidenote-1" class="margin-toggle sidenote-number">(1)</label>
-<input type="checkbox" id="sidenote-1" class="margin-toggle"/>
-<span class="sidenote">
-<span class="sidenote-number">(1)</span>Eg, if you solve for the motion of the <a href="https://www.youtube.com/watch?v=_dQJBBklpQQ">Mould fountain</a>, you won&rsquo;t necessarilly be able to solve for the motion of the <a href="https://www.dropbox.com/scl/fi/yuc4gkf5zxhv54xsmb1e8/Fig-5-Minimal-Chain-Fountain.wmv?rlkey=rkl58krvo58nv1d1h8tcsr35h&amp;e=1&amp;st=709zxmhy&amp;dl=0">Yokoyama fountain</a>.
-</span>
-</p>
-<p>The good news is that <a href="https://doi.org/10.1119/10.0000304">there&rsquo;s a better way</a>. We can encode the force law and kinematic constraints in a function called the Lagrangian and solve for the motion of the system by minimizing that function&rsquo;s time integral. Less vector juggling is required of us, and our solution will generalize more easily to problems with different constraints.</p>
-<p>This is one of the goals of classical mechanics: to make hard physics problems easier by encoding them as optimization problems on functions.</p>
+  <section><h2 id="the-big-idea">
+The big idea
+<a href="#the-big-idea" class="heading-anchor">#</a>
+</h2>
+<p>Encode physics problems as optimization problems on functions.</p>
+<p>Newtonian mechanics is about turning physics problems into initial value problems. Given the force laws and the initial configuration of a system, you just crank out the evolution of the system. This is a fully general procedure. Any classical mechanics problem that you can solve with Lagrangians and Hamiltonians you can also solve with forces.</p>
+<p>Why is it sometimes better to optimize a function rather than solving an IVP?</p>
+<p><strong>Vector calculus is fiddly and easy to mess up.</strong> The Newtonian method requires you to solve a differential vector equation, whereas the Lagrangian method encodes all relevant information in a single scalar function. The first approach gives you many more opportunities to make a small mistake.</p>
+<p>I want to draw a loose analogy to special relativity. The Lorentz transformations are equivalent to the three fundamental effects: time dilation, length contraction, and the rear clock ahead effect. Either one can be derived from the other, but we sometimes prefer the Lorentz method because it gives you fewer chances to slip up. Once you&rsquo;ve written down the ST coordinates of the events you care about, you just put them through the transformations, and you&rsquo;re done. Plug and chug. No further judgement is required on your part.</p>
+<p>Similarly, solving a classical mechanics problem becomes a rote exercise once you&rsquo;ve written down <code>$ L$</code> or <code>$ H$</code> as the case may be. Take derivatives, solve, and put in the initial conditions. Plug and chug. You gain less physical insight than you would from solving N2, but you also run less risk of error.</p>
+<p><strong>Newtonian methods don&rsquo;t generalize to quantum systems.</strong> In QM, the position of a particle is described by a wavefunction extending over space, so there&rsquo;s no well-defined position for you to plug into a force law. It doesn&rsquo;t make sense to apply N2 to such a particle, but it <em>does</em> make sense to define an operator <code>$H$</code> that will satisfy (a generalized version of) the <a href="https://en.wikipedia.org/wiki/Hamilton%E2%80%93Jacobi_equation">Hamilton-Jacobi Equation</a>. The Lagrangian and Newtonian methods are equivalent within classical mechanics, but when we come to quantum mechanics, it turns out that one method has legs while the other doesn&rsquo;t.</p>
+<p><strong>Newtonian methods don&rsquo;t play nicely with relativity.</strong> The Lorentz transformation for a force is quite awkward and understanding how to apply it can be rather subtle. If we have to do relativistic dynamics, we&rsquo;d much rather do them in Lagrangian terms, since the action is Lorentz invariant.</p>
+<p>[TODO: Why is this true? What assumptions are needed to make the action Lorentz invariant?]</p>
 <h3 id="questions">
 Questions
 <a href="#questions" class="heading-anchor">#</a>
@@ -79,6 +81,7 @@ Questions
 <li>How do we know that there couldn&rsquo;t be a force that depended on the acceleration of a particle, or on higher derivatives of its position? Relativity…?</li>
 <li>What does Noether&rsquo;s Theorem really say, and what are all of its assumptions? The loose statement I know—for every symmetry there has to be a conserved quantity—seems shockingly strong.</li>
 <li>Does deep learning raise the status of Lagrangian mechanics, as Alex Alemi suggests in <a href="https://slideslive.com/39014637">this lecture</a>?</li>
+<li>Can we say anything about how the computational complexity of solving the Euler-Lagrange equations compares to the complexity of solving N2?</li>
 </ul>
 <h3 id="reading-list">
 Reading List
@@ -87,16 +90,17 @@ Reading List
 <p>Theory</p>
 <ul>
 <li>Landau &amp; Lifshitz, <em>Course of Theoretical Physics, <a href="https://shop.elsevier.com/books/mechanics/landau/978-0-08-050347-9">Vol 1: Mechanics</a>.</em> I don&rsquo;t tend to like Russian textbooks very much, but this one is beautiful.</li>
-<li>Woodhouse, <a href="https://link.springer.com/book/10.1007/978-1-84882-816-2"><em>Introduction to Analytical Mechanics</em></a></li>
+<li>Woodhouse, <a href="https://link.springer.com/book/10.1007/978-1-84882-816-2"><em>Introduction to Analytical Mechanics</em>.</a> Goes for rigor over clarity. Woodhouse has a confusing habit of doing every derivation in multiple coordinate systems at the same time.</li>
 <li>Kibble and Berkshire, <a href="https://en.wikipedia.org/wiki/Classical_Mechanics_(Kibble_and_Berkshire)"><em>Classical Mechanics</em></a></li>
-<li>Morin, <em>Introduction to Classical Mechanics</em> <a href="https://scholar.harvard.edu/files/david-morin/files/cmchap6.pdf">chapter 6</a></li>
+<li>Morin, <em>Introduction to Classical Mechanics</em> <a href="https://scholar.harvard.edu/files/david-morin/files/cmchap6.pdf">ch 6</a> ✔ Lives up to Morin&rsquo;s usual standards. Very illuminating worked examples.</li>
 <li><em>Feynman Lectures</em>, <a href="https://www.feynmanlectures.caltech.edu/II_19.html">lecture II.19</a> on the Principle of Least Action</li>
+<li>Tong, &ldquo;<a href="https://www.damtp.cam.ac.uk/user/tong/dynamics/two.pdf">The Lagrangian Formalism</a>&rdquo;</li>
 </ul>
 <p>Applications</p>
 <ul>
 <li>Denny, &ldquo;<a href="https://doi.org/10.1119/10.0000304">A uniform explanation of all falling chain phenomena</a>&rdquo; in <em>AJP</em>.</li>
 </ul>
-<p><em>Last updated 13 October 2024</em></p>
+<p><em>Last updated 2 November 2024</em></p>
 </section>
   <section><footer class="page-footer">
 <hr />
