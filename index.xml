@@ -65,11 +65,11 @@
       <description>The big idea # Encode physics problems as optimization problems on functions.&#xA;Newtonian mechanics is about turning physics problems into initial value problems. Given the force laws and the initial configuration of a system, you just crank out the evolution of the system. This is a fully general procedure. Any classical mechanics problem that you can solve with Lagrangians and Hamiltonians you can also solve with forces.&#xA;Why is it sometimes better to optimize a function rather than solving an IVP?</description>
     </item>
     <item>
-      <title>Dirac Notation</title>
-      <link>https://mkodama.org/notes/dirac/</link>
+      <title>Computational Complexity</title>
+      <link>https://mkodama.org/notes/comp-comp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mkodama.org/notes/dirac/</guid>
-      <description>This note is a stub for now—more soon!&#xA;Questions # What are the advantages of Dirac notation over plain old function notation? Reading List # Dirac&amp;rsquo;s original paper, &amp;ldquo;A new notation for quantum mechanics&amp;rdquo; ✔ Chapter 1 from Andre Lukas&amp;rsquo;s notes on mathematical methods for physicists ✔ Andrew Steane&amp;rsquo;s crisp introduction to Dirac notation Sakurai&amp;rsquo;s Modern Quantum Mechanics §1.2 Chapter 3 from Griffiths and Schroeter&amp;rsquo;s Intro to QM Hall, QT for Mathematicians §3.</description>
+      <guid>https://mkodama.org/notes/comp-comp/</guid>
+      <description>The main questions # Many problems in math, programming, and life have the form Given an input of variable size, return an output satisfying some condition. For example:&#xA;Integer factorization. Given an integer $n$, return its prime factors. Grammar checking. Given a natural language sentence $n$ words long, return all syntactic rules that the sentence violates. Stable matching. Given $n$ ladies&amp;rsquo; preferences over $n$ gentlemen, and the same gentlemen&amp;rsquo;s preferences over the $n$ ladies, pair them up for dancing so that no lady and gentleman not paired with each other would mutually prefer to dance together.</description>
     </item>
     <item>
       <title>Dodgson Condensation</title>
