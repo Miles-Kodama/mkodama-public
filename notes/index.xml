@@ -8,7 +8,7 @@
     <language>en-US</language>
     <atom:link href="https://mkodama.org/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Choral music</title>
+      <title>Choral Music</title>
       <link>https://mkodama.org/notes/choral/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/choral/</guid>
@@ -26,7 +26,7 @@
       <link>https://mkodama.org/notes/comp-comp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/comp-comp/</guid>
-      <description>The main questions # Many problems in math, programming, and life have the form Given an input of variable size, return an output satisfying some condition. For example:&#xA;Integer factorization. Given an integer $n$, return its prime factors. Grammar checking. Given a natural language sentence $n$ words long, return all syntactic rules that the sentence violates. Stable matching. Given $n$ ladies&amp;rsquo; preferences over $n$ gentlemen, and the same gentlemen&amp;rsquo;s preferences over the $n$ ladies, pair them up for dancing so that no lady and gentleman not paired with each other would mutually prefer to dance together.</description>
+      <description>Big picture # Many problems in math, programming, and life have the form Given an input of variable size, return an output satisfying some condition. For example:&#xA;Integer factorization. Given an integer $n$, return its prime factors. Grammar checking. Given a natural language sentence $n$ words long, return all syntactic rules that the sentence violates. Stable matching. Given $n$ ladies&amp;rsquo; preferences over $n$ gentlemen, and the same gentlemen&amp;rsquo;s preferences over the $n$ ladies, pair them up for dancing so that no lady and gentleman not paired with each other would mutually prefer to dance together.</description>
     </item>
     <item>
       <title>Dodgson Condensation</title>
@@ -62,6 +62,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://mkodama.org/notes/moral-uncertainty/</guid>
       <description>Maximizing Expected Choiceworthiness seems reasonable on its face, but I have three worries.&#xA;(1) I&amp;rsquo;m not sure that the best reasons we have to maximize expected value in cases of empirical uncertainty generalize to the case of moral uncertainty. For example, Law of Large Numbers arguments don&amp;rsquo;t apply if the event that you&amp;rsquo;re uncertain about is by its nature unrepeatable.&#xA;(2) It&amp;rsquo;s a very strict constraint on a moral theory to say it must rate all possible actions one might take with a single real number.</description>
+    </item>
+    <item>
+      <title>Remarkable Families</title>
+      <link>https://mkodama.org/notes/families/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/families/</guid>
+      <description>Examples # The Samuelson/Summers family. A family of all-star economists. Robert Summers was the father of Treasury secretary Larry Summers, brother of Nobel laureate Paul Samuelson, husband of Anita Summers, and brother-in-law of Kenneth Arrow (of impossibility theorem fame).&#xA;The Boole/Hinton Family. Physics Nobel laureate Geoffrey Hinton is descended from George Boole, the namesake of Boolean logic, and from Charles Hinton, the mathematician who invented the word &amp;ldquo;tesseract.&amp;rdquo; Geoffrey&amp;rsquo;s father was also a famous entymologist.</description>
     </item>
     <item>
       <title>Suffering-Focused Ethics</title>
