@@ -81,8 +81,21 @@ Why is computational complexity theory such a mess?
 <iframe src="https://www.math.ucdavis.edu/~greg/zoology/diagram.xml" width="480" height="420"></iframe>
 </span>
  click on a typical complexity class, and observe how many of the other classes turn gray, meaning that we don&rsquo;t know whether they&rsquo;re harder or easier than problems in the selected class. And to make matters worse, it&rsquo;s unlikely that the zoo is complete. We almost certainly haven&rsquo;t identified all of the complexity classes of practical or theoretical interest, let alone mapped out how they relate to all presently known complexity classes.</p>
-<p>What would it take for CCT to turn from a zoo into a library? Ambitiously, we would like to solve the <a href="https://simons.berkeley.edu/news/meta-complexity-basic-introduction-meta-perplexed">meta-complexity problem</a>: Is there an efficient algorithm that takes a problem <code>$P$</code> and a complexity class <code>$C$</code> and returns true iff <code>$P$</code> is in <code>$C$</code>? We hope that there does exist such an algorithm, because to find it would be to solve CCT. But we might be unlucky enough to live in a world where the algorithm doesn&rsquo;t exist, and there is no general efficient procedure for answering questions about computational complexity. In that case, the most CCT can hope to be is a giant encyclopedia of problems whose complexities happen to be easily characterizable. We would remain unable to say anything nontrivial about the complexities of most conceivable problems. This would be a disappointing outcome.</p>
+<p>What would it take for CCT to turn from a zoo into a well organized library? Ambitiously, we would like to solve the <a href="https://simons.berkeley.edu/news/meta-complexity-basic-introduction-meta-perplexed">meta-complexity problem</a>: Is there an efficient algorithm that takes a problem <code>$P$</code> and a complexity class <code>$C$</code> and returns true iff <code>$P$</code> is in <code>$C$</code>? We hope that there does exist such an algorithm, because to find it would be to solve CCT. But we might be unlucky enough to live in a world where the algorithm doesn&rsquo;t exist, and there is no general efficient procedure for answering questions about computational complexity. In that case, the most CCT can hope to be is a giant encyclopedia of problems whose complexities happen to be easily characterizable. We would remain unable to say anything nontrivial about the complexities of most conceivable problems. This would be a disappointing outcome.</p>
 <p>Do we have any good reason to expect a happier outcome? It depends partly on how natural or artificial we find questions about computational complexity. Maybe the computational complexity classes that we&rsquo;ve defined don&rsquo;t carve the space of all problems anywhere near its joints. Maybe Turing machines (and by extension, computers) are not natural kinds. Then we would hardly expect there to be elegant, fully general answers to questions about computational complexity.</p>
+<h3 id="is-everything-in-textsfp-really-tractable">
+Is everything in <code>$\textsf{P}$</code> really tractable?
+<a href="#is-everything-in-textsfp-really-tractable" class="heading-anchor">#</a>
+</h3>
+<p>It&rsquo;s often assumed that everything solvable in polynomial time is tractable—ie, if a problem is in <code>$\textsf{P}$</code>, we can actually solve it in practice. There&rsquo;s no <em>ex ante</em> reason why this assumption should hold. If the best possible algorithm to solve some problem runs in <code>$O(n^{9000}),$</code> the problem technically belongs in <code>$\textsf{P}$</code>, but we don&rsquo;t have a prayer of solving it for full-size inputs. Yet empirically, it turns out that most non-contrived problems we can do in polynomial time can be done in linear or quadratic time.<label for="sidenote-1" class="margin-toggle sidenote-number">(1)</label>
+<input type="checkbox" id="sidenote-1" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(1)</span>The first person to tell me this was <a href="https://davidquarel.github.io/">David Quarel</a>.
+</span>
+</p>
+<p>For example, take boolean satisfiability. 1-SAT and 2-SAT are both solvable in linear time, and after that, 3-SAT and above are all <code>$\textsf{NP}$</code>-hard. You can color the nodes of a 2-colorable graph in linear time, but if it&rsquo;s only guraranteed to be k-colorable for some higher k, that&rsquo;s <code>$\textsf{NP}$</code>-hard. If you have a graph, and you&rsquo;d like to find a subset of its nodes that don&rsquo;t touch each other, you can do that in linear time unless the maximum degree is three or above, in which case it&rsquo;s <code>$\textsf{NP}$</code>-hard. If you have two strings, and you&rsquo;d like to find the minimum number of one-character insertions and deletions needed to make them match, that can be done in quadratic time. But if you want to know the number of <em>block</em> insertions and deletions needed to make them match, that&rsquo;s <code>$\textsf{NP}$</code>-hard again. The stylized fact coming out of all these examples is that if you can do it in <code>$O(n^k)$</code> for any <code>$k$</code>, you can usually do it for reasonable <code>$k$</code>.</p>
+<p>How weird or surprising is this stylized fact? Maybe not very if we consider what programming is like in real life. How often does it happen that you can only solve a problem with twenty-one nested loops, but you never have to iterate over subsets of your input? Pretty much never—at least in my experience. Either you can write a simpler program with less nesting, or else the complexity is exponential, and you should just give up.</p>
+<p>We might suspect, though, that this is more a selection effect than it is a deep fact about logic. Maybe there <em>are</em> problems out there that can&rsquo;t be done any faster than <code>$O(n^{21})$</code> but we mistake them for <code>$\textsf{NP}$</code>-hard, or maybe they&rsquo;re so convoluted to pose that no one has thought to study them yet.</p>
 <h3 id="questions">
 Questions
 <a href="#questions" class="heading-anchor">#</a>
@@ -90,6 +103,7 @@ Questions
 <ul>
 <li>Do any serious computer scientists think <code>$\textsf P = \textsf{NP}$</code>? If they do, what are their reasons for thinking so?</li>
 <li>What if anything does CCT have to say about the complexities of solving problems with <a href="http://amirrorclear.net/files/the-many-forms-of-hypercomputation.pdf">hypercomputation</a>?</li>
+<li>Have people gone looking for problems that are in <code>$\textsf P$</code> but are nonetheless intractable? If so, what have they found?</li>
 </ul>
 <h3 id="reading">
 Reading
@@ -98,9 +112,9 @@ Reading
 <ul>
 <li>Aaronson, <a href="https://www.scottaaronson.com/papers/philos.pdf"><em>Why Philosophers Should Care about Computational Complexity</em></a> ✔</li>
 <li>Becker, &ldquo;<a href="https://simons.berkeley.edu/news/meta-complexity-basic-introduction-meta-perplexed">Meta-Compexity: A Basic Introduction for the Meta-Perplexed</a>&rdquo; ✔</li>
-<li>Sipser, <em>Introduction to the Theory of Computation</em></li>
+<li>Sipser, <em>Introduction to the Theory of Computation</em>. Maybe unavoidably, the part on CCT is heavy going if you skip the first part on computability theory.</li>
 </ul>
-<p><em>Last updated 9 December 2024</em></p>
+<p><em>Last updated 12 January 2025</em></p>
 </section>
   <section><footer class="page-footer">
 <hr />
