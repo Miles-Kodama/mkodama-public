@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description"
-    content="A motivating example # Consider the function $f:[0,1]\to \mathbb{R}$ that takes all the irrational numbers to one and all the rational numbers to zero, ie
+    content="Motivations # Consider the function $f:[0,1]\to \mathbb{R}$ that takes all the irrational numbers to one and all the rational numbers to zero, ie
 \[f(x) = \begin{cases}0 &amp; x\in \mathbb{Q} \\ 1 &amp; \text{otherwise}\end{cases}\]
-If you try to graph this function in the plane, it looks like an equals sign. There&rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1). ">
+If you try to graph this function in the plane, it looks like an equals sign. There&rsquo;s a solid line of unit length going from (0,0) to (1,0) and another going from (0,1) to (1,1). Nevertheless, we know that these two lines aren&rsquo;t really equally &ldquo;solid&rdquo; or equally &ldquo;dense. ">
 <link rel="canonical" href="https://mkodama.org/notes/measures/" />
 
 
@@ -60,9 +60,9 @@ If you try to graph this function in the plane, it looks like an equals sign. Th
 
   
 
-  <section><h3 id="a-motivating-example">
-A motivating example
-<a href="#a-motivating-example" class="heading-anchor">#</a>
+  <section><h3 id="motivations">
+Motivations
+<a href="#motivations" class="heading-anchor">#</a>
 </h3>
 <p>Consider the function <code>$f:[0,1]\to \mathbb{R}$</code> that takes all the irrational numbers to one and all the rational numbers to zero, ie</p>
 <p><code>\[f(x) = \begin{cases}0 &amp; x\in \mathbb{Q} \\ 1 &amp; \text{otherwise}\end{cases}\]</code></p>
@@ -84,12 +84,28 @@ and there&rsquo;s no way for the infimum of the upper sums to equal the supremum
 </span>
 
 <code>\[\int_{[0,1]}f\,d\lambda  = 1\lambda\big([0,1]\setminus \mathbb{Q}\big) + 0 \lambda \big([0,1]\cap \mathbb{Q}\big).\]</code>
-All that&rsquo;s left now is to define a function <code>$\lambda$</code> called a measure that takes a subset of <code>$\mathbb{R}$</code> and tells us what its length should be. This turns out to be surprisingly involved, since we can&rsquo;t explicitly define <code>$\lambda$</code> on <code>$\mathcal{P}(\mathbb{R}).$</code> Rather, we define it on a small family of subsets of the reals, and then show that our definition extends uniquely to a measure on a larger family of subsets.<label for="sidenote-3" class="margin-toggle sidenote-number">(3)</label>
+All that&rsquo;s left now is to define a function <code>$\lambda$</code> called a measure that takes a subset of <code>$\mathbb{R}$</code> and tells us what its length should be.</p>
+<p>Another motivation for measure theory comes out of probability. Suppose that you want to assign probabilities to events in infinite sample spaces. For example, you might want to find the probability that a dart thrown at random at the interval <code>$[0,1]$</code> will land in <code>$[1/3,2/3]$</code>. Obviously the probability <em>should</em> be <code>$1/3$</code>, but the principle of indifference that we would rely on to deliver this result in a finite context breaks here.<label for="sidenote-3" class="margin-toggle sidenote-number">(3)</label>
 <input type="checkbox" id="sidenote-3" class="margin-toggle"/>
 <span class="sidenote">
-<span class="sidenote-number">(3)</span>The hardest part of this procedure is the <a href="https://en.wikipedia.org/wiki/Carath%C3%A9odory%27s_extension_theorem">Carathéodory Extension Theorem</a>. See Schilling ch 6.
+<span class="sidenote-number">(3)</span>I mean Laplace&rsquo;s finite P of I, not the slightly more sophisticated continuous version that still runs into <a href="https://www.youtube.com/watch?v=mZBwsm6B280&amp;pp=ygUII3J1c3N1bGw%3D">paradox</a>.
 </span>
- Still though, this is the big idea: define a generalized notion of length in order to make the integral agree better with our intuitions about area.</p>
+ The cardinality of the unit interval is <code>$\alef_0$</code>, and all points in the interval are equally likely to get hit by the dart, so each one should be assigned probability <code>$1/\alef_0$</code>? And since <code>$[1/3,2/3]$</code> also contains a continuum of points, the probability of hitting the subinterval is…<code>$\alef_0/\alef_0$</code>? Clearly something has gone wrong here. The solution is to give up on associating the probability of a set with the <em>number</em> of points it contains and instead associate the probability with the <em>size</em> of the set. We want to say that for some measure <code>$\lambda$</code>,
+<code>\[P(\text{dart in the interval})=\frac{\lambda \left([1/3,2/3]\right)}{\lambda \left([1,0]\right)} = 1/3.\]</code></p>
+<h3 id="why-cant-we-measure-_every_-set">
+Why can&rsquo;t we measure <em>every</em> set?
+<a href="#why-cant-we-measure-_every_-set" class="heading-anchor">#</a>
+</h3>
+<p>Let&rsquo;s stick for a moment with the task of defining a measure <code>$\lambda$</code> on <code>$\R$</code>. Our measure is going to take a subset of <code>$\R$</code> and map it to a real number that represents, roughly, the subset&rsquo;s length. Question—can the domain of <code>$\lambda$</code> be all of <code>$\mathcal{P}(\mathbb{R})$</code>? That is, can we consistently assign a length to <em>every</em> subset of the real line? The answer turns out to be no, at least not if <code>$\lambda$</code> is to respect some basic intuitions about length.</p>
+<p>We should be able to agree on the following. (1) Any reasonable measure has to be translationally invariant. If I take <code>$X\subset\R$</code> in the domain of <code>$\lambda$</code> and shift it by a constant, that had better not change its measure. After all, an object (usually) doesn&rsquo;t get longer or shorter when I translate it in space. (2) The measure of a countable union of disjoint measurable sets should be the sum of the sets&rsquo; measures. This requirement is highly plausible at least in the finite case. (3) The measure of a closed interval <code>$[a,b]$</code> should be <code>$b-a$</code>. Clearly.</p>
+<p>But now consider a set <code>$V\subseteq [0,1]$</code> that contains exactly one point from each coset of <code>$\mathbb{Q}$</code> in <code>$\R$</code>.<label for="sidenote-4" class="margin-toggle sidenote-number">(4)</label>
+<input type="checkbox" id="sidenote-4" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(4)</span>Such a set is called Vitali set. The rest of this section is a summary of a <a href="https://e.math.cornell.edu/people/belk/measuretheory/NonMeasurableSets.pdf">proof by James Belk</a>.
+</span>
+ If you translate the set <code>$V$</code> by a rational number <code>$q_1$</code> to get <code>$q_1 + V$</code>, it can never intersect with <code>$q_2 + V$</code> for any distinct rational <code>$q_2$</code>, essentially because the rationals are closed under addition. Further, every element of <code>$[0,1]$</code> lands in some set of the form <code>$q + V$</code> for <code>$q\in [-1,1]\cap \mathbb{Q}$</code>. But then we must have</p>
+<p><code>\[[0,1]\subseteq \bigsqcup_{q\in [-1,1]\cap \mathbb{Q}} q+V\subseteq [-1,2],\]</code>
+where the right containment holds because you can&rsquo;t add a number in <code>$[0,1]$</code> to a number in <code>$[-1,1]$</code> and get more than two or less than minus one. An immediate consequence of these containment relations is that the thing in the middle—the union of all the <code>$q+V$</code>—needs to have length between one and three. But notice that the sets we&rsquo;re unioning together are all translations of <code>$V,$</code> so by assumptions (1) and (2), you must get something between one and three when you add <code>$\lambda(V)$</code> to itself infinitely many times. No real number has this property. Conclusion—the set <code>$V$</code> cannot be measurable.</p>
 <h3 id="questions">
 Questions
 <a href="#questions" class="heading-anchor">#</a>
@@ -106,8 +122,9 @@ Reading List
 <li>Pollard, <a href="https://www.cambridge.org/core/books/users-guide-to-measure-theoretic-probability/A257FE6572A9142FE3B811FFF3FD0171"><em>A User&rsquo;s Guide to Measure Theoretic Probability</em></a>. Quirky notation. Magnificently clear.</li>
 <li>Hanson, &ldquo;<a href="https://james-hanson.github.io/publications/AnyFunction.pdf">Any Function I Can Actually Write Down is Measurable, Right?</a>&rdquo; Bizarrely, wrong.</li>
 <li>Kapinski and Kopp, <a href="https://link.springer.com/book/10.1007/978-1-4471-0645-6"><em>Measure, Integral, and Probability</em></a>. Not recommended.</li>
+<li>James Belk&rsquo;s <a href="https://jimbelk.github.io/web/measuretheory/index.htm">measure theory notes</a></li>
 </ul>
-<p><em>Last updated 8 January 2025</em></p>
+<p><em>Last updated 6 February 2025</em></p>
 </section>
   <section><footer class="page-footer">
 <hr />
