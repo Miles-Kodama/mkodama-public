@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<title>Zipf&#39;s Law - Miles Kodama</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description"
+    content="The law # The Zipf-Mandelbrot law says that the frequency of the $n$th most common word in a sufficiently long sample of natural language follows a shifted power law: $f\propto (n &#43; \beta)^\alpha.$ Empirically, it&rsquo;s found that $\beta \approx 2.7$ and $\alpha \approx -1$ across all human languages.(1) (1)Lest you should worry that this distribution is not normalizable, remember that no natural language has infinitely many words. Piantadosi (§2) points out that the traditional way of demonstrating ZM is statistically flawed. ">
+<link rel="canonical" href="https://mkodama.org/notes/zipf/" />
+
+
+<link rel="icon" href="https://mkodama.org/favicon.ico" />
+
+
+<link rel="apple-touch-icon" href="https://mkodama.org/touch-icon.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap" />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Emoji&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" />
+</noscript>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte.min.css">
+
+
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte-options.min.css">
+
+<link rel="stylesheet" href="https://mkodama.org/css/hugo-tufte-override.css">
+
+</head>
+<body>
+
+
+<article id="main">
+  <section>
+<h1 class="content-title">Zipf&#39;s Law</h1></section>
+
+  
+
+  <section><h2 id="the-law">
+The law
+<a href="#the-law" class="heading-anchor">#</a>
+</h2>
+<p>The Zipf-Mandelbrot law says that the frequency of the <code>$n$</code>th most common word in a sufficiently long sample of natural language follows a shifted power law: <code>$f\propto (n + \beta)^\alpha.$</code> Empirically, it&rsquo;s found that <code>$\beta \approx 2.7$</code> and <code>$\alpha \approx -1$</code> across all human languages.<label for="sidenote-1" class="margin-toggle sidenote-number">(1)</label>
+<input type="checkbox" id="sidenote-1" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(1)</span>Lest you should worry that this distribution is not normalizable, remember that no natural language has infinitely many words.
+</span>
+</p>
+<p><a href="https://colala.berkeley.edu/papers/piantadosi2014zipfs.pdf">Piantadosi</a> (§2) points out that the traditional way of demonstrating ZM is statistically flawed. Suppose you take a single corpus of natural language, as Zipf did, and you calculate the observed frequency <code>$\widehat{f}$</code> for each word in the corpus. You then use these <em>observed</em> frequencies to compute <em>observed</em> frequency ranks <code>$\widehat n.$</code> But wait—we don&rsquo;t intrinsically care about <code>$\widehat f$</code> and <code>$\widehat n$</code> for the particular corpus we happen to have chosen. <code>$\widehat f_i$</code> is just an estimate for the true frequency <code>$f$</code> of word <code>$i$</code> in the language, and it&rsquo;s subject to some amount of sampling error. Then the issue is that the error of <code>$\widehat f_i$</code> is correlated with the error of <code>$\widehat n_i$</code>. If by pure chance, we overestimated a word&rsquo;s frequency, we will also underestimate its rank, and if we underestimated a word&rsquo;s frequency, we will overestimate its rank. So even if all words were really equiprobable in the language, Zipf&rsquo;s methodology would produce a spurious negative correlation between frequency and rank.</p>
+<p>The solution to this issue is to use two separate corpora: one to estimate frequency ranks and another to estimate frequencies. This way, your errors in <code>$\widehat f$</code> and <code>$\widehat n$</code> will be uncorrelated, and the residuals on your fit will be interpretable. Piantadosi does this analysis and finds that ZM is accurate but not fully precise. To first order, <code>$f\propto 1/n$</code>, but there are significant higher-order corrections.</p>
+<p>There&rsquo;s evidence that the ZM law also applies to nonhuman languages. <a href="https://www.science.org/doi/10.1126/science.adq7055">Arnon et al.</a> took several years worth of transcribed humpback whale song and calculated frequencies for all the bigrams observed. They then segmented the songs into word-like units by inferring that whenever the probability of some bigram was less than 0.425 times the probability of the previous bigram, the second bigram spanned a word boundary. This makes intuitive sense. If you take the string &ldquo;previousbigram&rdquo; letter-pair by letter-pair, they all look pretty reasonable until you get to &ldquo;sb&rdquo;, which is the 344th most common bigram <a href="https://gist.github.com/lydell/c439049abac2c9226e53#file-bigrams-json-L345">in the Google corpus</a>. Further, we have independent evidence<label for="sidenote-2" class="margin-toggle sidenote-number">(2)</label>
+<input type="checkbox" id="sidenote-2" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(2)</span>Saffran, Aslin, &amp; Newport, &ldquo;<a href="https://www.science.org/doi/10.1126/science.274.5294.1926">Statistical Learning by 8-Month-Old Infants</a>&rdquo;
+</span>
+ that human infants use something close to this algorithm to learn word boundaries in speech, lending Arnon et al.&rsquo;s approach biological plausibility.</p>
+<p>Once the whale song is chopped up into words, you can calculate the frequency of each word observed and fit the resulting distribution to a power law. The authors give an <code>$R^2$</code> value (0.93) for this fit, and they provide a log-log <a href="https://www.science.org/doi/10.1126/science.adq7055#F2">plot</a> that looks vaguely straight, but frustratingly, they don&rsquo;t report the best fit parameters <code>$\alpha$</code> and <code>$\beta$</code> anywhere in their paper or in the <a href="https://www.science.org/doi/10.1126/science.adq7055#:~:text=journal%2Darticle%2Dreuse-,Supplementary%20Materials,-The%20PDF%20file">supplementary materials</a>. Just going by eyeball, it looks like <code>$\alpha \approx -0.8$</code>, which isn&rsquo;t far off from the observed value for human languages.</p>
+<h2 id="why-a-power-law">
+Why a power law?
+<a href="#why-a-power-law" class="heading-anchor">#</a>
+</h2>
+<p>The ZM law is surprising for two reasons. (1) Why is there a right tail of uncommon words at all? Language should presumably be optimized for information density, so you might expect word frequencies to follow an entropy-maximizing uniform distribution. All words should be equally frequent in order to make the average word maximally surprising. (2) Even if we accept that word frequencies can&rsquo;t follow a uniform distribution for some reason, why should they follow this <em>specific</em> distribution? What&rsquo;s so special about the ZM power law? It seems like a crazy coincidence that mutually isolated cultures all over the world should all have invented languages whose word frequencies go as <code>$1/n$</code>.</p>
+<p>There are a <em>ton</em> of hypothesized explanations for the ZM law floating around:</p>
+<blockquote>
+<p>To give a brief picture of the range of explanations that have been worked out, such distributions have been argued to arise from random concatenative processes, mixtures of exponential distributions, scale-invariance, (bounded) optimization of entropy or Fisher information, the invariance of such power laws under aggregation,
+multiplicative stochastic processes, preferential re-use, symbolic descriptions of complex stochastic systems, random walks on logarithmic scales, semantic organization, communicative optimization, random division of elements into groups, first- and second-order approximation of most common (e.g. normal) distributions, optimized memory search, among many others.<label for="sidenote-3" class="margin-toggle sidenote-number">(3)</label>
+<input type="checkbox" id="sidenote-3" class="margin-toggle"/>
+<span class="sidenote">
+<span class="sidenote-number">(3)</span><a href="https://colala.berkeley.edu/papers/piantadosi2014zipfs.pdf">Piantadosi</a> §1
+</span>
+</p>
+</blockquote>
+<p>Note that all of these explanations were put forward before there was good evidence for ZM in non-human languages. Now that we do have such evidence, all explanations that rely on strict assumptions about how human brains form and parse language should get a bit less credence.</p>
+<h3 id="questions">
+Questions
+<a href="#questions" class="heading-anchor">#</a>
+</h3>
+<ul>
+<li>Does ZM hold even approximately for any artificial languages?</li>
+<li>Can we sanity check Arnon et al.&rsquo;s procedure for inferring word boundaries in whale songs on human language?</li>
+</ul>
+<h3 id="reading">
+Reading
+<a href="#reading" class="heading-anchor">#</a>
+</h3>
+<ul>
+<li>Piantadosi, &ldquo;<a href="https://colala.berkeley.edu/papers/piantadosi2014zipfs.pdf">Zipf&rsquo;s word frequency law in natural language</a>&rdquo;</li>
+<li>Arnon et al. &ldquo;<a href="https://www.science.org/doi/pdf/10.1126/science.adq7055">Whale song shows language-like statistical structure</a>&ldquo;✔</li>
+<li>Lavi-Rotbain &amp; Arnon, &ldquo;<a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027722000269?via%3Dihub">The learnability consequences of Zipfian distributions in language</a>&rdquo;</li>
+</ul>
+<p><em>Last updated 18 February 2025</em></p>
+</section>
+  <section><footer class="page-footer">
+<hr />
+
+<div class="previous-post" style="display:inline-block;">
+  
+</div>
+
+<div class="next-post", style="display:inline-block;float:right;">
+  
+  <a class="link-reverse" href="https://mkodama.org/notes/yankees/?ref=footer">The Yankees Decision Problem »</a>
+  
+</div>
+
+<ul class="page-footer-menu">
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    <li><a href="https://mailchi.mp/9d6b52ea249e/mkodama-newsletter"> Subscribe</a></li>
+  
+    <li><a href="mailto:miles@mkodama.org"> Email</a></li>
+  
+</ul>
+
+
+
+
+
+</footer>
+</section>
+  <section><nav class="menu">
+    <ul>
+    
+        <li><a href="https://mkodama.org/">Home</a></li>
+    
+        <li><a href="https://mkodama.org/posts/">Posts</a></li>
+    
+        <li><a href="https://mkodama.org/notes/">Notes</a></li>
+    
+        <li><a href="https://mkodama.org/categories/">Categories</a></li>
+    
+        <li><a href="https://mkodama.org/about/">About</a></li>
+    
+    </ul>
+</nav>
+</section>
+</article>
+
+
+
+
+
+
+
+  <script>(function(){var e,t,n,s=document.getElementsByTagName("code");for(n=0;n<s.length;){if(t=s[n],t.parentNode.tagName!=="PRE"&&t.childElementCount===0&&!t.classList.contains("nolatex")&&(e=t.textContent,/^\$[^$]/.test(e)&&/[^$]\$$/.test(e)&&(e=e.replace(/^\$/,"\\(").replace(/\$$/,"\\)"),t.textContent=e),/^\\\((.|\s)+\\\)$/.test(e)||/^\\\[(.|\s)+\\\]$/.test(e)||/^\$(.|\s)+\$$/.test(e)||/^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(e))){t.outerHTML=t.innerHTML;continue}n++}})()</script>
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="//cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+            
+            
+            
+            
+            trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+            macros: {
+              "\\eqref": "\\href{###1}{(\\text{#1})}",
+              "\\ref": "\\href{###1}{\\text{#1}}",
+              "\\label": "\\htmlId{#1}{}"
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+
+</html>

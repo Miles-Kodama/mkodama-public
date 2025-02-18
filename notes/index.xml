@@ -84,5 +84,12 @@
       <guid>https://mkodama.org/notes/yankees/</guid>
       <description>This scenario is supposed to counter the Why ain&amp;rsquo;cha rich? argument for EDT by showing that causalists can predictably out-earn evidentialists when faced with the right sort of game.&#xA;In Arntzenius&amp;rsquo;s original statement, the Red Sox and the Yankees are going to play a long series of games against each other, and it&amp;rsquo;s known that the Yankees have a 90% chance of winning each game. The (apparently ill-informed) oddsmakers are offering two bets on the games: a bet that pays out $1 if the Yankees win and loses $2 if the Red Sox win, and a bet that pays out $2 if the Red Sox win and loses $1 if the Yankees win.</description>
     </item>
+    <item>
+      <title>Zipf&#39;s Law</title>
+      <link>https://mkodama.org/notes/zipf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://mkodama.org/notes/zipf/</guid>
+      <description>The law # The Zipf-Mandelbrot law says that the frequency of the $n$th most common word in a sufficiently long sample of natural language follows a shifted power law: $f\propto (n + \beta)^\alpha.$ Empirically, it&amp;rsquo;s found that $\beta \approx 2.7$ and $\alpha \approx -1$ across all human languages.(1) (1)Lest you should worry that this distribution is not normalizable, remember that no natural language has infinitely many words. Piantadosi (§2) points out that the traditional way of demonstrating ZM is statistically flawed.</description>
+    </item>
   </channel>
 </rss>
