@@ -1,90 +1,106 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://mkodama.org/posts/dutchbooks/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/philosophy/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/rationality/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/reductionist/</loc>
-    <lastmod>2024-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/introspective/</loc>
-    <lastmod>2024-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/advice/</loc>
-    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/numbers/</loc>
-    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/numeracy/</loc>
-    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/ai/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/education/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/dunbar/</loc>
-    <lastmod>2024-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/nametag/</loc>
-    <lastmod>2024-02-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/categories/books/</loc>
-    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/posts/taleb-randomness/</loc>
-    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkodama.org/notes/choral/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/class-mech/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/comp-comp/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/dodgson-con/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/fuzzy/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/measures/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/modal-realism/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/moral-uncertainty/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/odyssey/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/families/</loc>
-  </url><url>
-    <loc>https://mkodama.org/series/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/sfe/</loc>
-  </url><url>
-    <loc>https://mkodama.org/tags/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/yankees/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/uk/</loc>
-  </url><url>
-    <loc>https://mkodama.org/notes/zipf/</loc>
-  </url>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+    <loc>https://www.mkodama.org/content/nametag/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/landmark-numbers/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/yankees/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/choral/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/taleb-randomness/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/UK/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/psychological-connectedness/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/remarkable-families/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/fuzzy-bayes/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/condensation/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/suffering-focused/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/about/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/moral-uncertainty/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/dutch-books/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/modal-realism/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://www.mkodama.org/content/odyssey/index.html</loc>
+    <lastmod>2025-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
 </urlset>
